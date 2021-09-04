@@ -12,10 +12,10 @@ services:
       && nginx -g 'daemon off;'"
     volumes:
       - ./nginx/nginx.template.conf:/etc/nginx/nginx.conf.template
-      - ./nginx/ssl:/etc/nginx/ssl/
+      - ./nginx/ssl:/etc/nginx/ssl
     ports:
       - 8080:80
-    env_file: 
+    env_file: ./.env
     environment:
       SERVER_NAME: "${SERVER_NAME}"
       PROXY_PASS: "${PROXY_PASS}"
